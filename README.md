@@ -1,6 +1,49 @@
-## JS Test Boilerplate 0.1 (WIP)
-[![Build Status](https://travis-ci.org/CraftAcademy/karma-jquery-jasmine_boilerplate.svg?branch=master)](https://travis-ci.org/CraftAcademy/karma-jquery-jasmine_boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/CraftAcademy/karma-jquery-jasmine_boilerplate/badge.svg?branch=master)](https://coveralls.io/github/CraftAcademy/karma-jquery-jasmine_boilerplate?branch=master)
+## Movie Excercise
+Create a Movie object:
+
+Movie
+- title
+- year
+- duration
++ play()
++ pause()
++ resume()
+Instantiate some of your favorite movies and play with them in the console.
+
+Create an `EventEmitter` class with the following methods: `on`, `emit`, `off`. The on method will allow to pass a callback or listener that will be executed each time a given event is triggered. The emit method will allow a class to trigger events to be consumed by other functions/objects. The off method will delete the listener.
+
+Make `Movie` a subclass of `EventEmitter`. Publish "play" event on `Movie.play()`, "pause" event on `Movie.pause()`, and "resume" event on `Movie.resume()``
+
+Create a `Logger` class with a `log(info)` method that will output info to the console. Make log listen to a Movie's 'play' event. You should be able to do something like this in the console:
+
+```javascript
+let terminator = new Movie('Terminator', 1984, 90);
+let logger = new Logger();
+terminator.on('play', logger.log);
+// ...
+terminator.play(); // output: The 'play' event has been emitted
+```
+Create an object called `Social` with methods `share(friendName)` and `like(friendName)` that will generate the following output `"{friendName} likes/share {Movie Name}"`. Hint: declare `Social` as an object literal, use `Object.assign` to mix `Social` methods into a `Movie` instance. Use Template Literals to generate the like/share method output. You should be able to do something like this in the console:
+
+```javascript
+ironman.share('Mike Blossom'); // output: Share Iron Man with Mike Blossom
+```
+Create an `Actor` class and create some actors from one of your favorite movies.
+
+Add a method to `Movie` that will allow to add one or more actors at the same time.
+
+```
+let terminator = new Movie('Terminator I', 1985, 60);
+let arnold = new Actor('Arnold Schwarzenegger', 50);
+let otherCast = [
+ new Actor('Paul Winfield', 50),
+ new Actor('Michael Biehn', 50),
+ new Actor('Linda Hamilton', 50)
+];
+
+terminator.addCast(arnold);
+terminator.addCast(otherCast); //Movie must contain an array of 4 actors
+```
 
 ####Dependencies
 * [Jasmine](https://github.com/jasmine/jasmine)
