@@ -10,7 +10,7 @@ Movie
 + resume()
 Instantiate some of your favorite movies and play with them in the console.
 
-Create an `EventEmitter` class with the following methods: `on`, `emit`, `off`. The on method will allow to pass a callback or listener that will be executed each time a given event is triggered. The emit method will allow a class to trigger events to be consumed by other functions/objects. The off method will delete the listener.
+Create an `EventEmitter` class with the following methods: `on`, `emit`, `off`. The `on` method will allow to pass a callback or listener that will be executed each time a given event is triggered. The emit method will allow a class to trigger events to be consumed by other functions/objects. The off method will delete the listener.
 
 Make `Movie` a subclass of `EventEmitter`. Publish "play" event on `Movie.play()`, "pause" event on `Movie.pause()`, and "resume" event on `Movie.resume()``
 

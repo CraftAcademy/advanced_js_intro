@@ -6,7 +6,11 @@ describe("Movie", function() {
   });
 
   it("is constucted by EventEmitter", function() {
-    expect(subject.constructor).toEqual(_EventEmitter);
+    expect(subject.constructor.name).toEqual('_EventEmitter');
+  });
+
+  it("has a on listener", function() {
+    expect(subject.on).toBe("function")
   });
 
   it("has a title", function() {
